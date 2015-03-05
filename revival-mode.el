@@ -31,6 +31,7 @@ for next emacs session"
       (insert ")\n"))
     )))
 
+;;;###autoload
 (define-minor-mode revival-mode
   "back alive killed buffer"
   :lighter " revival"
@@ -40,4 +41,9 @@ for next emacs session"
   (add-hook 'kill-emacs 'save-killed-buffer-history)
   )
 
+;;;###autoload
+(add-hook 'find-file-hook 'revival-mode)
+
 (provide 'revival-mode)
+
+
